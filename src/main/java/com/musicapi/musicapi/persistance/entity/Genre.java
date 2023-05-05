@@ -18,8 +18,8 @@ public class Genre {
     private Integer idgenre;
     private String genre;   
     
-  //  @OneToMany(mappedBy = "genre")
-   // private List<Track> tracks;
+    @OneToMany(mappedBy = "genre")
+   private List<Track> tracks;
 
     public Integer getIdgenre() {
         return idgenre;
@@ -32,10 +32,6 @@ public class Genre {
     public String getGenre() {
         return genre;
     }
-/*
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
 
     public List<Track> getTracks() {
         return tracks;
@@ -44,5 +40,5 @@ public class Genre {
     public void setTracks(List<Track> tracks) {
         this.tracks = tracks;
     }
-    */
+
 }

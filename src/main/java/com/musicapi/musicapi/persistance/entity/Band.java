@@ -5,23 +5,28 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.util.List;
 
 @Entity
-@Table(name = "composer")
+@Table(name = "band")
 public class Band {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idcomposer")
-    private Integer idComposer;
+    @Column(name = "bandid")
+    private Integer bandId;
     private String band;
+    
+    @OneToMany(mappedBy = "band")
+    private List<Track> tracks;
 
-    public Integer getIdComposer() {
-        return idComposer;
+    public Integer getBandId() {
+        return bandId;
     }
 
-    public void setIdComposer(Integer idComposer) {
-        this.idComposer = idComposer;
+    public void setBandId(Integer bandId) {
+        this.bandId = bandId;
     }
 
     public String getBand() {
@@ -31,5 +36,13 @@ public class Band {
     public void setBand(String band) {
         this.band = band;
     }
-    
+
+    public List<Track> getTracks() {
+        return tracks;
+    }
+
+    public void setTracks(List<Track> tracks) {
+        this.tracks = tracks;
+    }
+
 }

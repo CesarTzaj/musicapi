@@ -11,10 +11,11 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface GenreMapper {
    
+    
     GenreDTO toGenreDTO (Genre genre);
     List<GenreDTO> toGenreDTOs (List<Genre> Genre);
     
     @InheritInverseConfiguration
-   // @Mapping(target = "tracks", ignore = true)
+    @Mapping(target = "tracks", ignore = true)
     Genre toGenre(GenreDTO genreDTO);
 }

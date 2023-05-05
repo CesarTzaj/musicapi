@@ -3,15 +3,15 @@ package com.musicapi.musicapi.domain.dto;
 
 
 public class BandDTO {
-    private Integer idComposer;
+    private Integer bandId;
     private String band;
 
-    public Integer getIdComposer() {
-        return idComposer;
+    public Integer getBandId() {
+        return bandId;
     }
 
-    public void setIdComposer(Integer idComposer) {
-        this.idComposer = idComposer;
+    public void setBandId(Integer bandId) {
+        this.bandId = bandId;
     }
 
     public String getBand() {
@@ -21,4 +21,5 @@ public class BandDTO {
     public void setBand(String band) {
         this.band = band;
     }
+
 }
