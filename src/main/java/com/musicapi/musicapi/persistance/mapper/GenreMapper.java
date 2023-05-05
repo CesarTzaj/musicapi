@@ -6,6 +6,7 @@ import com.musicapi.musicapi.persistance.entity.Genre;
 import java.util.List;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface GenreMapper {
@@ -14,5 +15,6 @@ public interface GenreMapper {
     List<GenreDTO> toGenreDTOs (List<Genre> Genre);
     
     @InheritInverseConfiguration
+   // @Mapping(target = "tracks", ignore = true)
     Genre toGenre(GenreDTO genreDTO);
 }

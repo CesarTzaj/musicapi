@@ -15,6 +15,7 @@ public class GenreRepository implements GenreRepositoryDTO{
     
     @Autowired
     private GenreCrudRepository crud;
+    
     @Autowired
     private GenreMapper mapper;
 
