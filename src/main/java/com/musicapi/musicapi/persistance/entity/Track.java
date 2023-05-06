@@ -21,6 +21,9 @@ public class Track {
     private Byte[] track;
     @Column(name = "favorite_count")
     private Integer  favorite;
+    @Column(name = "genreid")
+    private Integer genreid;
+    private Integer bandid;
     
     @ManyToOne
     @JoinColumn(name = "genreid", updatable = false, insertable = false)
@@ -62,6 +65,23 @@ public class Track {
         this.favorite = favorite;
     }
 
+    public Integer getGenreid() {
+        return genreid;
+    }
+
+    public void setGenreid(Integer genreid) {
+        this.genreid = genreid;
+    }
+
+
+    public Integer getBandid() {
+        return bandid;
+    }
+
+    public void setBandid(Integer bandid) {
+        this.bandid = bandid;
+    }
+
     public Genre getGenre() {
         return genre;
     }
@@ -78,7 +98,5 @@ public class Track {
         this.band = band;
     }
 
-
-
-    
+        
 }

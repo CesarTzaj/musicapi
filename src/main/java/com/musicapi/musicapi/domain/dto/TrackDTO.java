@@ -1,20 +1,22 @@
 package com.musicapi.musicapi.domain.dto;
 
-
 public class TrackDTO {
-    private Integer songId;
+
+    private Integer id;
     private String title;
     private Byte[] track;
-    private Integer  favorite;
+    private Integer favorite;
+    private Integer genreId;
+    private Integer bandId;
     private GenreDTO genre;
     private BandDTO band;
 
-    public Integer getSongId() {
-        return songId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setSongId(Integer songId) {
-        this.songId = songId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -41,6 +43,22 @@ public class TrackDTO {
         this.favorite = favorite;
     }
 
+    public Integer getGenreId() {
+        return genreId;
+    }
+
+    public void setGenreId(Integer genreId) {
+        this.genreId = genreId;
+    }
+
+    public Integer getBandId() {
+        return bandId;
+    }
+
+    public void setBandId(Integer bandId) {
+        this.bandId = bandId;
+    }
+
     public GenreDTO getGenre() {
         return genre;
     }
@@ -56,5 +74,5 @@ public class TrackDTO {
     public void setBand(BandDTO band) {
         this.band = band;
     }
-
+   
 }
