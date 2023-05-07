@@ -3,7 +3,10 @@ package com.musicapi.musicapi.web.controller;
 
 import com.musicapi.musicapi.domain.dto.TrackDTO;
 import com.musicapi.musicapi.domain.service.TrackService;
-import jakarta.websocket.server.PathParam;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,9 +24,10 @@ public class TrackController {
     
     @Autowired
     private TrackService service;
-    
+        
     @GetMapping("all")
-    public ResponseEntity<List<TrackDTO>> getAll(){
+    @ApiOperation("Get all songs")
+    public ResponseEntity<List<TrackDTO>> getAll( ){
         return new ResponseEntity<>(service.getAl(), HttpStatus.OK);
     }
     
@@ -31,6 +35,8 @@ public class TrackController {
     public ResponseEntity<TrackDTO> save(@RequestBody TrackDTO trackDTO){
     return new ResponseEntity<>(service.save(trackDTO), HttpStatus.CREATED);
     }
+    
+  
     @GetMapping("/genre/{id}")
     public ResponseEntity<List<TrackDTO>> getByGenreId(@PathVariable("id") int genreId){
         return (ResponseEntity<List<TrackDTO>>) service.getByGenreId(genreId)
